@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sales_2.Models;
+using Sales_2.Models.ViewModels;
 
 namespace Sales_2.Controllers
 {
@@ -25,6 +26,7 @@ namespace Sales_2.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+            ViewData["email"] = "ibruno.milione@gmail.com";
 
             return View();
         }
