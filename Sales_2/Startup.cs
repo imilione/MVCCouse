@@ -26,8 +26,9 @@ namespace Sales_2
             services.AddMvc();
 
             services.AddDbContext<Sales_2Context>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Sales_2Context")));
-        }
+                options.UseMySql(Configuration.GetConnectionString("Sales_2Context"), builder =>
+                    builder.MigrationsAssembly("Sales_2")));
+        }   
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
